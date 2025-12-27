@@ -1,0 +1,36 @@
+.left-panel {
+    overflow: hidden;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav {
+    margin-top: 20px;
+    /* display: flex; */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 15px;
+}
+
+.nav-item {
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 2;
+    gap: 1px;
+    padding: 5px 0;
+    justify-items: center;
+}
+
+.nav-item .icon {
+    font-size: 30px;
+    color: var(--color-text-secondary);
+}
+
+.nav-item p {
+    font-size: var(--s);
+}
+
+.nav-item:first-of-type {
+    border-bottom: 2px solid var(--color-primary-hover);
+}

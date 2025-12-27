@@ -1,0 +1,13 @@
+.chats-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    scrollbar-color: var(--color-status-online) white;
+    margin-bottom: 5px;
+}
+
+.last-message {
+    color: var(--color-text-secondary);
+}

@@ -1,0 +1,10 @@
+.friends-list {
+    padding-inline: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-status-online) white;
+    margin-bottom: 5px;
+}

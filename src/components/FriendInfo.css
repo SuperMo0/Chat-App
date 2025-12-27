@@ -1,0 +1,48 @@
+.friend-info {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+}
+
+
+.friend-info:hover {
+    background-color: rgb(250, 239, 222);
+}
+
+.friend-info img {
+    height: 100%;
+    object-fit: scale-down;
+    transform: translateX(-14px);
+}
+
+.img-container {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.img-stauts-container {
+    position: relative;
+}
+
+.status-dot {
+    position: absolute;
+    background-color: var(--color-status-online);
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    right: -3px;
+    bottom: 9px;
+    border: 1px solid white;
+}
+
+.online {
+    color: var(--color-status-online);
+}
+
+.offline {
+    color: var(--color-status-offline);
+}

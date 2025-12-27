@@ -1,0 +1,35 @@
+.search-container input {
+    display: block;
+    width: 100%;
+    font-size: var(--m);
+    background-color: rgb(250, 241, 231);
+    border: none;
+    padding: 5px;
+    padding-left: 25px;
+    border: 1px solid rgba(0, 0, 0, 0.071);
+    border-radius: 10px;
+}
+
+
+.search-container {
+    position: relative;
+
+}
+
+.left-panel-options-container {
+    padding-inline: 15px;
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    left: 2px;
+    transform: translateY(-50%);
+    color: var(--color-text-secondary);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.search-container input::placeholder {
+    color: var(--color-text-secondary);
+}

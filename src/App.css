@@ -1,0 +1,74 @@
+:root {
+  --color-primary: #3b82f6;
+  --color-primary-hover: #2563eb;
+
+  --color-status-online: #10b981;
+  --color-status-offline: #9ca3af;
+
+  --color-bg-app: #e3e4e6;
+  --color-bg-container: #f5f3f3;
+  --color-bg-sidebar: #f9fafb;
+  --color-bg-input: #f3f4f6;
+
+  --color-text-primary: #1f2937;
+  --color-text-secondary: #6b7280;
+  --color-text-white: #ffffff;
+
+  --color-border: #e5e7eb;
+  --xxxl: 2rem;
+  --xxl: 1.8rem;
+  --xl: 1.6rem;
+  --l: 1.4rem;
+  --m: 1.2rem;
+  --s: 1rem;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: inherit;
+  /* font-size: inherit; */
+}
+
+img {
+  display: block;
+}
+
+.button {
+  background-color: var(--color-primary);
+  padding: 12px 15px;
+  color: #e3e4e6;
+  font-size: 1rem;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.flex {
+  display: flex;
+  gap: 8px;
+}
+
+body {
+  background-color: var(--color-bg-app);
+}
+
+.app-container {
+  width: min(1280px, 99vw);
+  margin-inline: auto;
+  border: 1px dashed black;
+  height: 800px;
+  margin-top: 5vh;
+  background-color: var(--color-bg-container);
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.219);
+  padding-top: 10px;
+}
+
+input:focus {
+  outline: 1px solid rgb(253, 224, 188);
+}

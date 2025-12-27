@@ -1,0 +1,28 @@
+/*.proflie-container {
+    /~ border: 1px dashed black; ~/
+
+}*/
+
+.profile-wrapper {
+    border: 1px dashed black;
+    width: min(400px, 99%);
+    margin-inline: auto;
+
+}
+
+.profile-image-container {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    object-position: center;
+    background-color: gray;
+}
+
+/*.profile-image-container img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}*/
