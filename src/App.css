@@ -11,8 +11,10 @@
   --color-bg-input: #f3f4f6;
 
   --color-text-primary: #1f2937;
+  color: var(--color-text-primary);
   --color-text-secondary: #6b7280;
   --color-text-white: #ffffff;
+  --off-white: rgb(248, 233, 216);
 
   --color-border: #e5e7eb;
   --xxxl: 2rem;
@@ -47,6 +49,7 @@ img {
   border: none;
   border-radius: 15px;
   cursor: pointer;
+  display: block;
 }
 
 .flex {
@@ -71,4 +74,10 @@ body {
 
 input:focus {
   outline: 1px solid rgb(253, 224, 188);
+}
+
+input,
+textarea {
+  color: var(--color-text-primary);
+
 }

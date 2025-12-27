@@ -1,12 +1,16 @@
-/*.proflie-container {
-    /~ border: 1px dashed black; ~/
+.proflie-container {
+    display: grid;
+    place-content: center;
 
-}*/
+}
 
 .profile-wrapper {
-    border: 1px dashed black;
     width: min(400px, 99%);
     margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
 
 }
 
@@ -19,10 +23,90 @@
     background-color: gray;
 }
 
-/*.profile-image-container img {
+.profile-image-container img {
     width: 250px;
     height: 250px;
     border-radius: 50%;
     object-fit: cover;
     object-position: center;
-}*/
+}
+
+.edit-img-container {
+    position: relative;
+    width: fit-content;
+}
+
+.edit-icon-container {
+    cursor: pointer;
+    background-color: var(--off-white);
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    border-radius: 50%;
+    right: 10px;
+    bottom: 25px;
+    display: grid;
+    place-content: center;
+}
+
+.edit-icon {
+    color: var(--color-primary);
+    font-size: 25px;
+}
+
+.profile-input {
+    font-size: var(--l);
+    padding: 10px 10px;
+    border: none;
+    border-radius: 10px;
+    color: var(--color-text-primary);
+    background-color: transparent;
+    width: 90%;
+}
+
+.input-container {
+    background-color: var(--off-white);
+    width: 100%;
+    align-items: center;
+    display: flex;
+    position: relative;
+}
+
+.profile-input:focus,
+.profile-textarea:focus {
+    outline: none;
+    border: none;
+}
+
+.edit-input-icon {
+    cursor: pointer;
+    color: var(--color-text-secondary);
+    font-size: 20px;
+
+}
+
+.profile-textarea {
+    font-size: var(--l);
+    padding: 10px 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: transparent;
+    width: 100%;
+    border: 1px solid black;
+    border: none;
+    padding-right: 45px;
+    font-size: var(--l);
+}
+
+.edit-textarea-icon {
+    cursor: pointer;
+    color: var(--color-text-secondary);
+    font-size: 20px;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+}
+
+.save {
+    width: 100%;
+}

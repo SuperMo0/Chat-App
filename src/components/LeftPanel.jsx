@@ -8,25 +8,27 @@ import Search from './Search/Search.jsx';
 
 
 
-
-
-export default function LeftPanel() {
+export default function LeftPanel({ active, setWindow }) {
     return (
         <div className="left-panel">
             <Search></Search>
+            <form action="http://localhost:8080/login" method='post'>
+                <button> login</button>
+            </form>
 
             <div className="nav">
-                <div className="nav-item">
+                <div onClick={() => { setWindow('chats') }} className="nav-item" data-active={active == 'chats'}>
                     <BiSolidMessageRounded className='icon' />
                     <p>Chats</p>
                 </div>
 
-                <div className="nav-item">
+                <div onClick={() => { setWindow('people') }} className="nav-item" data-active={active == 'people'}>
+
                     <FaUserFriends className='icon' />
                     <p>People</p>
                 </div>
 
-                <div className="nav-item">
+                <div onClick={() => { setWindow('profile') }} className="nav-item" data-active={active == 'profile'}>
                     <FaUserAlt className='icon' />
                     <p>Profile</p>
                 </div>

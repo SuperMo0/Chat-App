@@ -14,6 +14,7 @@
 }
 
 .nav-item {
+    cursor: pointer;
     display: grid;
     grid-template-rows: subgrid;
     grid-row: span 2;
@@ -31,6 +32,6 @@
     font-size: var(--s);
 }
 
-.nav-item:first-of-type {
+.nav-item[data-active="true"] {
     border-bottom: 2px solid var(--color-primary-hover);
 }

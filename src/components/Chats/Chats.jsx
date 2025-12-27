@@ -1,6 +1,6 @@
 import React from 'react'
 import './Chats.css'
-import FriendInfo from './FriendInfo'
+import FriendInfo from './../FriendInfo'
 
 export default function Chats() {
 
