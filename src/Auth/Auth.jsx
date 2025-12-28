@@ -1,25 +1,35 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { createContext } from 'react'
-import Cookies from 'js-cookie';
+import server from './../Server/Server.js'
 
-
-const authContent = createContext();
+const AuthContext = createContext();
 export default function Auth({ children }) {
 
-    const [session, setSession] = useState();
+    const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true);
 
-
-    function login() {
-
-
+    function login(user) {
+        setUser(user);
     }
-
     useEffect(() => {
-        let session = Cookies.get('connect.sid');
-        console.log(session);
-    })
-    return (
+        async function checkCreditential() {
+            const [message, ok] = await server('/session');
+            if (ok) {
+                setUser(message.user);
+                return;
+            }
+        }
 
-        children
+        // checkCreditential();
+        setUser('mowafak');
+        setLoading(false);
+
+    }, [])
+    if (loading) return <h1>Loading...</h1>
+    return (
+        <AuthContext value={{ user, login }}>
+            {children}
+        </AuthContext>
     )
 }
+export const useAuth = () => useContext(AuthContext);

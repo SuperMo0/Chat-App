@@ -1,5 +1,5 @@
-.chats-list {
-    display: flex;
+/*.chats-list {
+     display: flex;
     flex-direction: column;
     gap: 20px;
     overflow-y: scroll;
@@ -9,5 +9,14 @@
 }
 
 .last-message {
+    color: var(--color-text-secondary);
+}*/
+
+.center {
+    display: grid;
+    place-content: center;
+}
+
+.select-start p {
     color: var(--color-text-secondary);
 }

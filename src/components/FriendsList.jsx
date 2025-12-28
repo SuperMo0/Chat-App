@@ -1,20 +1,19 @@
 import React from 'react'
 import './FriendsList.css'
 import FriendInfo from './FriendInfo'
+import { useData } from '../Layout/Layout';
 
 
 export default function FriendsList() {
 
-    let friends = []
-    for (let i = 0; i < 30; i++) {
-        friends.push(<FriendInfo></FriendInfo>
-        )
-    }
+    const { setChat, friends } = useData();
+
+
     return (
         <div className="friends-list">
-
-            {friends}
-
+            {friends.map((f) => {
+                return <FriendInfo onClick={() => { setChat(f.id) }} status={'online'} key={f.id} name={f.name} image={f.image}></FriendInfo>
+            })}
         </div>
     )
 }

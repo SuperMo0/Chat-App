@@ -3,8 +3,8 @@ import './LeftPanel.css'
 import { BiSolidMessageRounded } from "react-icons/bi";
 import { FaUserFriends } from "react-icons/fa";
 import { FaUserAlt } from "react-icons/fa";
-import FriendsList from './FriendsList';
-import Search from './Search/Search.jsx';
+import FriendsList from '../FriendsList.jsx';
+import Search from '../Search/Search.jsx';
 
 
 
