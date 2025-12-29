@@ -6,7 +6,6 @@
     cursor: pointer;
 }
 
-
 .friend-info:hover {
     background-color: rgb(250, 239, 222);
 }
@@ -14,7 +13,7 @@
 .friend-info img {
     height: 100%;
     object-fit: scale-down;
-    transform: translateX(-14px);
+    /* transform: translateX(-14px); */
 }
 
 .img-container {
