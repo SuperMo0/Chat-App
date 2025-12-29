@@ -1,22 +1,104 @@
-/*.chats-list {
-     display: flex;
-    flex-direction: column;
-    gap: 20px;
-    overflow-y: scroll;
-    scrollbar-width: none;
-    scrollbar-color: var(--color-status-online) white;
-    margin-bottom: 5px;
-}
-
-.last-message {
-    color: var(--color-text-secondary);
-}*/
-
 .center {
     display: grid;
     place-content: center;
 }
 
 .select-start p {
+    color: var(--color-text-secondary);
+}
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.left-arrow {
+    margin-left: auto;
+    font-size: 30px;
+    color: var(--color-primary);
+}
+
+.messages-container {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+.messages-container :first-child {
+    margin-top: auto !important;
+}
+
+
+.message-container {
+    width: min(350px, 50%);
+}
+
+.message-container.right {
+    align-self: self-end;
+}
+
+.message-date {
+    color: var(--color-text-secondary);
+}
+
+.content-container.blue {
+    background-color: var(--color-primary);
+    color: white;
+
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.content-container.grey {
+    background-color: rgb(250, 248, 223);
+    color: var(--color-text-primary);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.message-container img {
+    width: 50px;
+    border-radius: 50%;
+}
+
+
+.input-containe input {
+    font-size: var(--l);
+    padding: 5px;
+    padding-inline-start: 10px;
+    display: block;
+    max-width: 100%;
+    flex: 1;
+    border: 1px solid var(--color-primary);
+    border: none;
+}
+
+.input-containe {
+    display: flex;
+    gap: 5px;
+    padding: 5px;
+    /* border: 0.1px solid rgba(0, 0, 0, 0.18); */
+}
+
+.cricle {
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    cursor: pointer;
+
+}
+
+.send-icon {
+    color: white;
+    font-size: 28px;
+
+}
+
+.username-global-chat {
     color: var(--color-text-secondary);
 }

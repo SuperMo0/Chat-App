@@ -12,10 +12,6 @@ export default function LeftPanel({ active, setWindow }) {
     return (
         <div className="left-panel">
             <Search></Search>
-            <form action="http://localhost:8080/login" method='post'>
-                <button> login</button>
-            </form>
-
             <div className="nav">
                 <div onClick={() => { setWindow('chats') }} className="nav-item" data-active={active == 'chats'}>
                     <BiSolidMessageRounded className='icon' />

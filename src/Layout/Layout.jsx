@@ -19,37 +19,50 @@ export default function Layout() {
 
     const [friends, setFriends] = useState(null)
 
-
-    const [chatMessages, setChatMessages] = useState(null);
-    const [chat, setChat] = useState(null);
+    const [chat, setChat] = useState(0);
 
     useEffect(() => {
         async function getFriends() {
             const [res, ok] = await server('/friends');
-            setFriends(res.friends);
+            setFriends(res.friends.map((f) => {
+                f.notification = 0;
+                return f;
+            }));
         }
         getFriends();
     }, [])
 
-
     useEffect(() => {
-        if (!chat) return;
-        async function getChatMesages() {
-            const [res, ok] = await server(`/chats/${chat}`);
-            setChatMessages(res.messages);
+        if (!message) return;
+        if (message && (message.receiver == chat || (message.receiver == user.id && message.message.usersId == chat))) {
+            return;
         }
-        getChatMesages();
+        if (message.message.usersId == user.id) return;
 
-    }, [chat])
+        let friend = message.message.usersId;
+        setFriends(friends.map((f) => {
+            if (f.id == friend) f.notification++;
+            return f;
+        }))
+
+    }, [message])
+
+    function openChat(id) {
+        setChat(id);
+        setWindow('chats');
+        setFriends(friends.map((f) => {
+            if (f.id == id) f.notification = 0;
+            return f;
+        }))
+    }
 
     if (!connected || !friends) return <h1>Loading....</h1>
 
-
     return (
-        <DataProvider value={{ setChat, chat, friends, chatMessages, socket }}>
+        <DataProvider value={{ openChat, chat, friends, socket, message }}>
             <div className="layout">
                 <LeftPanel active={window} setWindow={setWindow} ></LeftPanel>
-                {window == 'chats' && <Chats></Chats>}
+                {window == 'chats' && <Chats key={chat}></Chats>}
                 {window == 'profile' && <Profile></Profile>}
                 {window == 'people' && <Friends></Friends>}
             </div>

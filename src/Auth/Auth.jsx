@@ -13,17 +13,13 @@ export default function Auth({ children }) {
     }
     useEffect(() => {
         async function checkCreditential() {
-            const [message, ok] = await server('/session');
+            const [message, ok] = await server('/login', { method: "post" });
+            setLoading(false);
             if (ok) {
                 setUser(message.user);
-                return;
             }
         }
-
-        // checkCreditential();
-        setUser('mowafak');
-        setLoading(false);
-
+        checkCreditential();
     }, [])
     if (loading) return <h1>Loading...</h1>
     return (

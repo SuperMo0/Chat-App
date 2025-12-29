@@ -8,7 +8,7 @@ export default function Friends() {
             <Search placeholder={'Search for People....'}></Search>
             <div className="users">
                 <div className="user">
-                    <FriendInfo></FriendInfo>
+                    {/* <FriendInfo></FriendInfo> */}
                     <button className='button add'>Add</button>
                 </div>
 

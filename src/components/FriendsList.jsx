@@ -6,13 +6,13 @@ import { useData } from '../Layout/Layout';
 
 export default function FriendsList() {
 
-    const { setChat, friends } = useData();
+    const { openChat, friends } = useData();
 
 
     return (
         <div className="friends-list">
             {friends.map((f) => {
-                return <FriendInfo onClick={() => { setChat(f.id) }} status={'online'} key={f.id} name={f.name} image={f.image}></FriendInfo>
+                return <FriendInfo onClick={() => { openChat(f.id) }} key={f.id} friend={f}></FriendInfo>
             })}
         </div>
     )

@@ -37,9 +37,9 @@
   /* font-size: inherit; */
 }
 
-img {
-  display: block;
-}
+/*img {
+  /~ display: block; ~/
+}*/
 
 .button {
   background-color: var(--color-primary);
@@ -62,7 +62,7 @@ body {
 }
 
 .app-container {
-  width: min(1280px, 99vw);
+  width: min(1280px, 100vw);
   margin-inline: auto;
   border: 1px dashed black;
   height: 800px;
@@ -70,14 +70,37 @@ body {
   background-color: var(--color-bg-container);
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.219);
   padding-top: 10px;
+  padding-right: 20px;
+  padding-bottom: 20px;
 }
 
 input:focus {
-  outline: 1px solid rgb(253, 224, 188);
+  outline: none;
 }
 
 input,
 textarea {
   color: var(--color-text-primary);
 
+}
+
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+  max-width: 35ch;
+
+}
+
+.login-form input {
+  text-align: left;
+  font-size: var(--l);
+  padding: 5px;
+  width: 100%;
+}
+
+.login-form label {
+  font-size: 2rem;
 }

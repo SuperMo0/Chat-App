@@ -4,20 +4,17 @@ export default async function server(path, options = {}) {
 
     let url = host + path;
 
-    let response = await fetch(url, {
+    let Options = {
         credentials: 'include',
-        Headers: { "Content-Type": "Application/json" },
+        headers: { "content-type": "Application/json" },
         ...options
-    })
+    }
+
+    let response = await fetch(url, Options);
+
 
     let ok = response.ok;
 
     let data = await response.json();
-    if (data) {
-        return [data, ok];
-    }
-    else {
-
-    }
-
+    return [data, ok];
 }
