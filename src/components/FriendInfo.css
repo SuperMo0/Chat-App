@@ -13,7 +13,6 @@
 .friend-info img {
     height: 100%;
     object-fit: scale-down;
-    /* transform: translateX(-14px); */
 }
 
 .img-container {
@@ -29,13 +28,20 @@
 
 .status-dot {
     position: absolute;
-    background-color: var(--color-status-online);
     width: 14px;
     height: 14px;
     border-radius: 50%;
     right: -3px;
     bottom: 9px;
     border: 1px solid white;
+}
+
+.green {
+    background-color: var(--color-status-online);
+}
+
+.grey {
+    background-color: var(--color-status-offline);
 }
 
 .online {

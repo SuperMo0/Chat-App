@@ -48,12 +48,12 @@
 .content-container.blue {
     background-color: var(--color-primary);
     color: white;
-
     padding: 10px;
     border-radius: 10px;
 }
 
 .content-container.grey {
+    flex: 1;
     background-color: rgb(250, 248, 223);
     color: var(--color-text-primary);
     padding: 10px;
