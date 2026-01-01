@@ -3,8 +3,9 @@
 > A real-time messaging application built with **React** for the frontend, and **Express** & **WebSockets** for the backend.
 
 ![ALT TEXT](./public/image1.png)
-![ALT TEXT](./public/image2.png)
 ![ALT TEXT](./public/image3.png)
+![ALT TEXT](./public/image2.png)
+
 
 ## ✨ Features
 
