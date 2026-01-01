@@ -2,6 +2,8 @@
 
 > A real-time messaging application built with **React** for the frontend, and **Express** & **WebSockets** for the backend.
 
+![ALT TEXT](./public/image1)
+
 ## ✨ Features
 
 * **Private Messaging:** Add friends and engage in one-on-one private chats.
