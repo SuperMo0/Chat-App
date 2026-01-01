@@ -29,7 +29,9 @@ export default function useSocket() {
 
             ws.onmessage = (message) => {
                 if (!isActive) return;
-                setMessage(JSON.parse(message.data));
+                let msg = JSON.parse(message.data);
+
+                setMessage(msg);
             }
 
             ws.onclose = (e) => {

@@ -3,13 +3,16 @@ import './FriendsList.css'
 import FriendInfo from './FriendInfo'
 import { useData } from '../Layout/Layout';
 import server from '../Server/Server';
+import { useAuth } from '../Auth/Auth';
 
 
 export default function FriendsList() {
 
-    const { openChat, message, chat } = useData();
+    const { openChat, message, chat, newFriend } = useData();
 
     const [friends, setFriends] = useState(null);
+
+    const { user } = useAuth();
 
     useEffect(() => {
         async function getFriends() {
@@ -20,20 +23,27 @@ export default function FriendsList() {
     }, [])
 
     useEffect(() => {
+        if (!newFriend) return;
+        if (friends && friends[friends.length - 1].id == newFriend.id) return;
+        setFriends([...friends, newFriend]);
+    })
+
+    useEffect(() => {
         if (!message) return;
 
-        let friend = message.message.usersId;
+        let chatId = message.chatId;
 
-        if (message.chatId == chat.chatId || friend == user.id) return;
+        if (chatId == chat.chatId || message.message.users.id == user.id) return;
 
         setFriends(friends.map((f) => {
-            if (f.id == friend) f.notification++;
+            if (f.chatId == chatId) f.notification++;
             return f;
         }))
     }, [message])
 
     function handleOpenChat(chat) {
         openChat(chat);
+
         setFriends(friends.map((friend) => {
             if (friend.id == chat.friend.id) friend.notification = 0;
             return friend;

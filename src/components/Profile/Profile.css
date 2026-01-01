@@ -1,7 +1,7 @@
 .proflie-container {
     display: grid;
     place-content: center;
-
+    position: relative;
 }
 
 .profile-wrapper {

@@ -16,6 +16,8 @@ export default function Layout() {
 
     const [chat, setChat] = useState({ chatId: 0, friend: { name: 'global', image: 'https://www.shutterstock.com/image-vector/world-chat-icon-flat-illustration-260nw-1471535438.jpg', notification: 0, isOnline: true } });
 
+    const [newFriend, SetNewFriend] = useState(null);
+
     function openChat(chat) {
         setChat(chat);
         setWindow('chats');
@@ -24,12 +26,12 @@ export default function Layout() {
     if (!connected) return <h1>Loading....</h1>
 
     return (
-        <DataProvider value={{ openChat, chat, socket, message }}>
+        <DataProvider value={{ openChat, chat, socket, message, newFriend }}>
             <div className="layout">
                 <LeftPanel active={window} setWindow={setWindow} ></LeftPanel>
-                {window == 'chats' && <Chats key={chat.chatId}></Chats>}
+                {window == 'chats' && <Chats></Chats>}
+                {window == 'people' && <People SetNewFriend={SetNewFriend}></People>}
                 {window == 'profile' && <Profile></Profile>}
-                {window == 'people' && <People></People>}
             </div>
         </DataProvider>
     )

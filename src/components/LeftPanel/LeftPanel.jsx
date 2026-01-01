@@ -9,7 +9,7 @@ export default function LeftPanel({ active, setWindow }) {
 
     return (
         <div className="left-panel">
-            <Search></Search>
+            <Search id={"searchFriends"}></Search>
             <div className="nav">
                 <div onClick={() => { setWindow('chats') }} className="nav-item" data-active={active == 'chats'}>
                     <BiSolidMessageRounded className='icon' />
